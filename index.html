@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navigationBar.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>BendDown Boutique</title>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <!-- <i class="fas fa-bars"></i> -->
+            <img class="hamburger-menu" src="assets/menu.svg" alt="">
+        </label>
+        <label  class="shopbtn">
+            <!-- <i class="fas fa-bars"></i> -->
+            <img class="hamburger-menu" src="assets/cart.svg" alt="">
+            <span>0</span>
+        </label>
+        <label class="logo">DesignX</label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="grid-main">
+        <div class="grid-sub grid-main-items">
+            <!-- Contains three images -->
+            <div class="grid-sub-items sub" id="product-three-images">
+                <img class="sub-images" src="assets/Abroline11.jpg" alt="">
+                <img class="sub-images" src="assets/Abroline11.jpg" alt="">
+                <img class="sub-images" src="assets/Abroline11.jpg" alt="">
+            </div>
+            <div class="grid-sub-items main" id="product-main-image">
+                <img class="main-images" src="assets/Abroline10.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="grid-main-items" id="product-info">
+            <!-- Contains information about the product-->
+            <h3> Boys' Stillwater Sherpa 1/4-Zip </h3>
+            <h3> FREE GROUND SHIPPING on all orders over $125 </h3>
+            <h3> 48.99 </h3>
+
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+            </div>
+
+            <input id="add-btn" type="submit" value="ADD TO BAG">
+
+        </div>
+
+
+
+
+
+
+        <script src="scripts/index.js"></script>
+</body>
+
+</html>

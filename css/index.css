@@ -1,0 +1,61 @@
+.grid-main{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap: 1rem;
+}
+
+.grid-sub{
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    gap: 1rem;
+}
+
+.grid-sub-items{
+    border: 1px solid teal;
+}
+
+.grid-main-items{
+    border: 1px solid tomato;
+}
+
+img{
+    width:inherit;
+    height: inherit;
+}
+
+.sub-images:hover{
+    cursor: pointer;
+    border: 2px solid tomato;
+}
+
+.sub{
+    width: 100%;
+    height: 100px;
+}
+
+.main{
+    width: 100%;
+    height: 700px;
+}
+
+
+/* Counter Starts */
+
+input{
+    width: 20px;
+}
+
+.down:hover{
+    cursor: pointer;
+}
+
+.up:hover{
+    cursor: pointer;
+}
+
+/* Counter Ends */
+
+/* Add button Starts */
+#add-btn{
+ width: 100px;
+}
