@@ -21,7 +21,7 @@
                 <!-- <i class="fas fa-bars"></i> -->
                 <a href="cart.html">
                     <img class="hamburger-menu" src="assets/cart.svg" alt="">
-                    <span id="shop-cart">0</span>
+                    <span id="shop-cart" class="item-quantity"></span>
                 </a>
             </label>
             <label class="logo">BendDown</label>
@@ -57,16 +57,15 @@
                 <img src="assets/Abroline10.jpg" alt="Placholder Image 2" class="product-frame">
               </div>
               <div class="product-details">
-                <h1><span class="item-quantity">4</span> x Eliza J Lace Sleeve Cuff Dress</h1>
-                <p class="bold">Navy, Size 18</p>
-                <!-- <p>Product Code - 232321939</p> -->
+                <h1><span class="item-quantity"></span> x <span class="item-name"></span></h1>
+                <p class="bold"> <span class="item-colour">Navy</span>, Size <span class="item-size"></span></p>
               </div>
             </div>
-            <div class="price">26.00</div>
+            <div class="price" id="priceValue"></div>
             <div class="quantity">
-              <input type="number" value="4" min="1" class="quantity-field">
+              <input type="number"  min="1" class="quantity-field">
             </div>
-            <div class="subtotal" id="product-subtotal">104.00</div>
+            <div class="subtotal" id="product-subtotal"></div>
             <div class="remove">
               <button>Remove</button>
             </div>
@@ -85,7 +84,7 @@
             </div>
             <div class="summary-total">
               <div class="total-title">Total</div>
-              <div class="total-value final-value" id="basket-total">130.00</div>
+              <div class="total-value final-value" id="basket-total"></div>
             </div>
             <div class="summary-checkout">
               <button class="checkout-cta">Go to Secure Checkout</button>

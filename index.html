@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/index.js"></script>
     <link rel="stylesheet" href="css/navigationBar.css">
     <link rel="stylesheet" href="css/index.css">
     <title>BendDown</title>
@@ -23,7 +25,7 @@
             <!-- <i class="fas fa-bars"></i> -->
             <a href="cart.html">
                 <img class="hamburger-menu" src="assets/cart.svg" alt="">
-                <span>0</span>
+                <span id="shop-cart"></span>
             </a>
         </label>
         <label class="logo">BendDown</label>
@@ -52,17 +54,20 @@
 
         <div class="grid-main-items" id="product-info">
             <!-- Contains information about the product-->
-            <h2 id="item-name"> Boys' Stillwater Sherpa 1/4-Zip </h2>
-            <h3> FREE GROUND SHIPPING on all orders over $125 </h3>
-            <h3 id="price"> 48.99 </h3>
+            <h2 class="item-name">Boys' Stillwater Sherpa 1/4-Zip </h2>
+            <h3>
+                <span class="item-colour">Navy</span>, Size 
+                <span class="item-size">18</span>
+            </h3>
+            <h3 class="price"> 48.99 </h3>
 
             <div class="counter">
-                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                <input id="item-count" type="text" value="1">
-                <span class="up" onClick='increaseCount(event, this)'>+</span>
+                <span class="down">-</span>
+                <input id="item-count" type="text" class="quantity-field" value="1">
+                <span class="up">+</span>
             </div>
 
-            <input id="add-btn" type="submit" value="ADD TO BAG" onclick="addItem()">
+            <input id="add-btn" type="submit" value="ADD TO BAG">
 
         </div>
 
@@ -70,8 +75,7 @@
 
 
 
-
-        <script src="scripts/index.js"></script>
+        
 </body>
 
 </html>

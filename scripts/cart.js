@@ -1,13 +1,32 @@
-function getItems() {
-    var values = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
+var item = localStorage.getItem(0);
 
-    while (i--) {
-        values.push(localStorage.getItem(keys[i]));
+// Parse JSON string to object
+var realItem = JSON.parse(item);
+
+var itemName = realItem.name;
+var itemColour = realItem.colour;
+var itemSize = realItem.size;
+var itemPrice = realItem.price;
+var itemQuantity = realItem.quantity;
+
+
+
+function getItems() {
+    if(localStorage.length>0){
+        $(".item-quantity").text(itemQuantity);
+        $(".quantity-field").val(itemQuantity);
+        $("#priceValue").text(itemPrice);
+        $(".item-size").text(itemSize);
+        $(".item-colour").text(itemColour);
+        $(".item-name").text(itemName);
+        $("#product-subtotal").text((itemPrice*itemQuantity).toFixed(2));
+        $("#basket-subtotal").text((itemPrice*itemQuantity).toFixed(2));
+        
+        recalculateCart(true);
     }
-    return values;
 }
+
+getItems();
 
 
 
@@ -16,9 +35,6 @@ var promoCode;
 var promoPrice;
 var fadeTime = 300;
 
-document.getElementById("shop-cart").innerText = document.querySelector(".quantity-field").value;
-document.getElementById("basket-subtotal").innerText = Number(document.querySelector("#product-subtotal").innerText);
-recalculateCart(Number(document.querySelector("#product-subtotal").innerText));
 
 
 
@@ -71,7 +87,6 @@ function recalculateCart(onlyTotal) {
     if (promoPrice) {
         var discount = total*promoPrice/100;
         total -= discount;
-        // $('.summary-promo').addClass('hide');
     }
 
     /*If switch for update only total, update only total display*/
@@ -97,6 +112,7 @@ function recalculateCart(onlyTotal) {
 }
 
 
+
 /* Update quantity */
 function updateQuantity(quantityInput) {
     /* Calculate line price */
@@ -115,18 +131,25 @@ function updateQuantity(quantityInput) {
     });
 
     productRow.find('.item-quantity').text(quantity);
-    document.getElementById("shop-cart").innerText = quantity;
+    document.getElementById("shop-cart").innerText = Number(quantity);
     updateSumItems();
-
-
 }
 
 function updateSumItems() {
     var sumItems = 0;
+
     $('.quantity input').each(function () {
         sumItems += parseInt($(this).val());
     });
     $('.total-items').text(sumItems);
+    var itemObject = {
+        name: itemName,
+        colour: itemColour,
+        size: itemSize,
+        price: itemPrice,
+        quantity: sumItems
+    }
+    localStorage.setItem(0, JSON.stringify(itemObject));
 }
 
 /* Remove item from cart */
@@ -138,4 +161,8 @@ function removeItem(removeButton) {
         recalculateCart();
         updateSumItems();
     });
+    $('.summary-promo').addClass('hide');
+    document.getElementById("shop-cart").innerText = 0;
+    localStorage.removeItem(0);
+
 }
