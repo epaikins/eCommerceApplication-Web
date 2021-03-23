@@ -56,6 +56,6 @@ input{
 /* Counter Ends */
 
 /* Add button Starts */
-#add-btn{
+.add-btn{
  width: 100px;
 }

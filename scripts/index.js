@@ -8,7 +8,7 @@ $(document).ready(function () {
         decreaseCount(this);
     });
 
-    $("#add-btn").click(function () {
+    $(".add-btn").click(function () {
         addItem();
     });
 
@@ -36,13 +36,6 @@ $(document).ready(function () {
     var itemSize = productRow.children().children('.item-size').text();
     var itemPrice = parseFloat(productRow.children('.price').text());
 
-
-    // var itemName = document.getElementById("item-name").innerText;
-    // var itemPrice = Number(document.getElementById("item-price").innerText).toFixed(2);
-    // var itemCount = document.getElementById("item-count").value;
-    // var cartCounter = Number(document.getElementById("shop-cart-counter").innerText);
-
-
     function addItem() {
         var itemQuantity = Number($('#item-count').val());
 
@@ -66,10 +59,14 @@ $(document).ready(function () {
 
         localStorage.setItem(0, JSON.stringify(itemObject));
         document.getElementById("shop-cart").innerText = itemQuantity;
+        $(".cd-qty").text(itemQuantity);
+        $(".slide-total").text((itemQuantity*itemPrice).toFixed(2));
+        console.log((itemQuantity*itemPrice).toFixed(2));
     };
 
     getQuantity();
 
+    // This reupdates the shopping cart 
     function getQuantity() {
         if(localStorage.length>0){
             var item = localStorage.getItem(0);
@@ -77,9 +74,17 @@ $(document).ready(function () {
             // Parse JSON string to object
             var realItem = JSON.parse(item);
     
+            var itemName = realItem.name;
+            var itemColour = realItem.colour;
+            var itemSize = realItem.size;
+            var itemPrice = realItem.price;
             var itemQuantity = realItem.quantity;
     
             $("#shop-cart").text(itemQuantity);
+            $(".cd-qty").text(itemQuantity);
+            $(".item-name").text(itemName);
+            $(".cd-price").text(itemPrice);
+            $(".slide-total").text((itemQuantity*itemPrice).toFixed(2));
         }
     }
 

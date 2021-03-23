@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/cart.js"></script>
     <link rel="stylesheet" href="css/navigationBar.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/slideCart.css">
     <title>BendDown</title>
 </head>
 <body>
@@ -18,12 +21,12 @@
                 <img class="hamburger-menu" src="assets/menu.svg" alt="">
             </label>
             <label  class="shopbtn">
-                <!-- <i class="fas fa-bars"></i> -->
-                <a href="cart.html">
-                    <img class="hamburger-menu" src="assets/cart.svg" alt="">
-                    <span id="shop-cart" class="item-quantity"></span>
-                </a>
-            </label>
+              <!-- <i class="fas fa-bars"></i> -->
+              <a href="cart.html">
+                  <img class="hamburger-menu" src="assets/cart.svg" alt="">
+                  <span id="shop-cart" class="item-quantity"></span>
+              </a>
+          </label>
             <label class="logo">BendDown</label>
             <ul class="nav-list">
                 <li class="nav-list-item"><a class="active" href="#">Home</a></li>
@@ -33,7 +36,7 @@
             </ul>
         </nav>
 
-        <!-- Shopping Cart -->
+        <!-- Checkout Cart -->
 
      <div class="shopping-cart">
         <div class="basket">
@@ -58,7 +61,7 @@
               </div>
               <div class="product-details">
                 <h1><span class="item-quantity"></span> x <span class="item-name"></span></h1>
-                <p class="bold"> <span class="item-colour">Navy</span>, Size <span class="item-size"></span></p>
+                <p class="bold"> <span class="item-colour"></span>, Size <span class="item-size"></span></p>
               </div>
             </div>
             <div class="price" id="priceValue"></div>
@@ -93,7 +96,8 @@
         </aside>
     </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="scripts/cart.js"></script>
+    
+    
+    <script src="scripts/slideCart.js"></script>
 </body>
 </html>
