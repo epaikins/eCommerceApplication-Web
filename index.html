@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/navigationBar.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>BendDown Boutique</title>
+    <title>BendDown</title>
 </head>
 
 <body>
@@ -21,15 +21,17 @@
         </label>
         <label  class="shopbtn">
             <!-- <i class="fas fa-bars"></i> -->
-            <img class="hamburger-menu" src="assets/cart.svg" alt="">
-            <span>0</span>
+            <a href="cart.html">
+                <img class="hamburger-menu" src="assets/cart.svg" alt="">
+                <span>0</span>
+            </a>
         </label>
-        <label class="logo">DesignX</label>
-        <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+        <label class="logo">BendDown</label>
+        <ul class="nav-list">
+            <li class="nav-list-item"><a class="active" href="#">Home</a></li>
+            <li class="nav-list-item"><a href="#">About</a></li>
+            <li class="nav-list-item"><a href="#">Services</a></li>
+            <li class="nav-list-item"><a href="#">Contact</a></li>
         </ul>
     </nav>
 
@@ -50,17 +52,17 @@
 
         <div class="grid-main-items" id="product-info">
             <!-- Contains information about the product-->
-            <h3> Boys' Stillwater Sherpa 1/4-Zip </h3>
+            <h2 id="item-name"> Boys' Stillwater Sherpa 1/4-Zip </h2>
             <h3> FREE GROUND SHIPPING on all orders over $125 </h3>
-            <h3> 48.99 </h3>
+            <h3 id="price"> 48.99 </h3>
 
             <div class="counter">
                 <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                <input type="text" value="1">
+                <input id="item-count" type="text" value="1">
                 <span class="up" onClick='increaseCount(event, this)'>+</span>
             </div>
 
-            <input id="add-btn" type="submit" value="ADD TO BAG">
+            <input id="add-btn" type="submit" value="ADD TO BAG" onclick="addItem()">
 
         </div>
 
