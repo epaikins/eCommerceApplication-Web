@@ -27,7 +27,7 @@
       <!-- <i class="fas fa-bars"></i> -->
       <a href="cart.html">
         <img class="hamburger-menu" src="assets/cart.svg" alt="">
-        <span id="shop-cart" class="item-quantity"></span>
+        <span id="shop-cart" class="item-quantity">0</span>
       </a>
     </label>
     <label class="logo"><a href="index.html">BendDown</a></label>
@@ -39,6 +39,7 @@
     </ul>
   </nav>
 
+
   <!-- Checkout Cart -->
   <div class="flex-div">
     <div class="shopping-cart">
@@ -48,7 +49,17 @@
         <button class="promo-code-cta">Apply</button>
       </div>
 
-      <div class="basket">
+      <!-- Empty Cart Message -->
+      <div class="cart-empty" id="cart-empty-id">
+        <div>
+          <h2> Your shopping bag is empty.
+          </h2>
+          <p>To add items to your bag, click the "Add to Bag" button from a product page.
+          </p>
+        </div>
+      </div>
+
+      <div class="basket" id="basket-product">
         <div class="basket-labels">
           <ul>
             <li class="item item-heading">Item</li>
@@ -80,10 +91,10 @@
 
       <aside>
         <div class="summary">
-          <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
+          <div class="summary-total-items"><span class="total-items" id="itemInBag">0</span> Items in your Bag</div>
           <div class="summary-subtotal">
             <div class="subtotal-title">Subtotal</div>
-            <div class="subtotal-value final-value" id="basket-subtotal"></div>
+            <div class="subtotal-value final-value" id="basket-subtotal">0.00</div>
             <div class="summary-promo hide">
               <div class="promo-title">Promotion</div>
               <div class="promo-value final-value" id="basket-promo"></div>
@@ -91,7 +102,7 @@
           </div>
           <div class="summary-total">
             <div class="total-title">Total</div>
-            <div class="total-value final-value" id="basket-total"></div>
+            <div class="total-value final-value" id="basket-total">0.00</div>
           </div>
           <div class="summary-checkout">
             <a href="checkout.html" class="checkout-cta">Go to Secure Checkout</a>

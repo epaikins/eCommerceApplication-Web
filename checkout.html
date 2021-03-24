@@ -8,8 +8,8 @@
     <script src="scripts/checkout.js"></script>
     <link rel="icon" type="image/png" href="assets/logo.svg">
     <link rel="stylesheet" href="css/navigationBar.css">
-    <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/cart.css">
 
     <title>BendDown - Checkout</title>
 </head>
@@ -37,9 +37,20 @@
         </ul>
     </nav>
 
+    <!-- Empty Cart Message -->
+    <div class="cart-empty" id="cart-empty-id">
+        <div>
+            <h2> Your shopping bag is empty.
+                
+             </h2>
+             <p>To add items to your bag, click the "Add to Bag" button from a product page.
+             </p>
+        </div>
+    </div>
+
 
       <!-- Checkout Cart -->
-  <div class="flex-div">
+  <div class="flex-div" id="summaryProduct">
     <div class="shopping-cart">
       <div class="basket-module">
         <label for="promo-code">Enter a promotional code</label>
@@ -47,7 +58,7 @@
         <button class="promo-code-cta">Apply</button>
       </div>
 
-      <div class="basket">
+      <div class="basket" id="basket-product">
         <div class="basket-labels">
           <ul>
             <li class="item item-heading">Item</li>
@@ -109,33 +120,37 @@
               <a href="#"> Shipping to an APO/FPO/DPO address? </a>
               <div>
                       <input type="text" class="small-text" id="firstName" placeholder="FIRST NAME">
-                      <input type="text" class="small-text" placeholder="LAST NAME">
+                      <input type="text" class="small-text" id="lastName" placeholder="LAST NAME">
               </div>
 
               <div>
-                  <input type="text" class="long-text" placeholder="ADDRESS"> <br>
+                  <input type="text" class="long-text" id="address" placeholder="ADDRESS"> <br>
               </div>
 
               <div>
-                  <input type="text" class="long-text"  placeholder="CITY">
+                <input type="text" class="long-text" id="gps" placeholder="GPS ADDRESS"> <br>
+            </div>
+
+              <div>
+                  <input type="text" class="long-text" id="city" placeholder="CITY">
               </div>
 
               <div>
                   <span>
-                      <input type="text" class="small-text" placeholder="STATE">
-                      <input type="text" class="small-text" placeholder="ZIP CODE">
+                      <input type="text" class="small-text" id="state" placeholder="STATE">
+                      <input type="text" class="small-text" id="zipCode" placeholder="ZIP CODE">
                   </span>
               </div>
               
               <div>
-                  <input type="text" class="small-text" placeholder="PHONE">
+                  <input type="text" class="small-text" id="phone" placeholder="PHONE">
               </div>
               <a href="#"> We do not share or sell your personal info. Privacy Policy </a>
 
               <h2>Order Status Recipient</h2>
               <h4>Where do we send order status updates?</h4>
               <div>
-                  <input type="text" class="long-text" placeholder="EMAIL">
+                  <input type="text" class="long-text" id="email" placeholder="EMAIL">
               </div>
 
               <a href="#"> We do not share or sell your personal info. Privacy Policy </a>

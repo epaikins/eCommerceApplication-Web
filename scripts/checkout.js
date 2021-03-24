@@ -1,17 +1,27 @@
 $(document).ready(function () {
 
-    var item = localStorage.getItem(0);
-    var total = localStorage.getItem('total');
-    // Parse JSON string to object
-    var realItem = JSON.parse(item);
-    var itemName = realItem.name;
-    var itemColour = realItem.colour;
-    var itemSize = realItem.size;
-    var itemPrice = realItem.price;
-    var itemQuantity = realItem.quantity;
-     
+    if (localStorage.length > 0) {
+        var item = localStorage.getItem(0);
+        var total = localStorage.getItem('total');
 
-    getItems();
+        // Parse JSON string to object
+        var realItem = JSON.parse(item);
+        var itemName = realItem.name;
+        var itemColour = realItem.colour;
+        var itemSize = realItem.size;
+        var itemPrice = realItem.price;
+        var itemQuantity = realItem.quantity;
+
+        getItems();
+    } else {
+        document.getElementById("cart-empty-id").style.display = "flex";
+        document.getElementById("cart-empty-id").style.float = "none";
+        document.getElementById("summaryProduct").style.display = "none";
+
+    }
+
+
+
     var fadeTime = 300;
 
     function getItems() {
@@ -28,65 +38,32 @@ $(document).ready(function () {
         }
     }
 
-    /* Recalculate cart */
-    function recalculateCart(onlyTotal) {
-        var subtotal = 0;
-
-        /* Sum up row totals */
-        $('.basket-product').each(function () {
-            subtotal += parseFloat($(this).children('.subtotal').text());
-        });
-
-        /* Calculate totals */
-        var total = subtotal;
-
-        //If there is a valid promoCode
-        var promoPrice = parseFloat($('.promo-value').text());
-        if (promoPrice) {
-            var discount = total * promoPrice / 100;
-            total -= discount;
-        }
-
-        /*If switch for update only total, update only total display*/
-        if (onlyTotal) {
-            /* Update total display */
-            $('.total-value').fadeOut(fadeTime, function () {
-                $('#basket-total').html(total.toFixed(2));
-                $('.total-value').fadeIn(fadeTime);
-            });
-        } else {
-            /* Update summary display. */
-            $('.final-value').fadeOut(fadeTime, function () {
-                $('#basket-subtotal').html(subtotal.toFixed(2));
-                $('#basket-total').html(total.toFixed(2));
-                if (total == 0) {
-                    $('.checkout-cta').fadeOut(fadeTime);
-                } else {
-                    $('.checkout-cta').fadeIn(fadeTime);
-                }
-                $('.final-value').fadeIn(fadeTime);
-            });
-        }
-    }
-
-
     // Shipping Details
 
-    
+
     // var itemColour = productRow.children().children('.item-colour').text();
     // var itemSize = productRow.children().children('.item-size').text();
     // var itemPrice = parseFloat(productRow.children('.price').text());
 
-    $("#payment-cta").on('click', ()=>{
-        var personDetails = $(".small-text").parent().parent();
-        var itemName = personDetails.children("#firstName").text();
-        console.log(itemName);
-        console.log(personDetails)
-    })
+    $("#payment-cta").on('click', () => {
+        var itemfName = $("#firstName").val();
+        var itemlName = $("#lastName").val();
+        var itemAdress = $("#address").val();
+        var itemGPS = $("#gps").val();
+        var itemCity = $("#city").val();
+        var itemState = $("#state").val();
+        var itemCode = $("#zipCode").val();
+        var itemPhone = $("#phone").val();
+        var itemEmail = $("#email").val();
 
-    function addPersonDetails(){
-        var personDetails = $(".small-text").parent().parent();
-        var itemName = personDetails.children('#firstName').text();
-        console.log(itemName)
-    };
+        if (itemfName.length > 0 && itemlName.length > 0 && itemEmail.length > 0 && itemEmail.length > 0) {
+            // console.log(itemfName,itemlName,itemEmail, itemGPS);
+            alert("Thank you for your purchase, we will send a link to the payment portal via the email provided.")
+            document.getElementById("summaryProduct").style.display = "none";
+            document.getElementById("cart-empty-id").style.display = "flex";
+            $(':input').val('');
+        } else {
+            alert("Please these fields are required:\n\nFirst name, Last name, Email and GPS");
+        }
+    })
 })

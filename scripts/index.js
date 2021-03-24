@@ -62,6 +62,8 @@ $(document).ready(function () {
         localStorage.setItem(0, JSON.stringify(itemObject));
         document.getElementById("shop-cart").innerText = itemQuantity;
         $(".cd-qty").text(itemQuantity);
+        $(".item-name").text(itemName);
+        $(".cd-price").text(itemPrice);
         $(".slide-total").text((itemQuantity*itemPrice).toFixed(2));
         console.log((itemQuantity*itemPrice).toFixed(2));
     };

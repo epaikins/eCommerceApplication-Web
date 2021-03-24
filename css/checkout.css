@@ -1,3 +1,9 @@
+.cart-empty{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 .shopbtn{
     display: none;
 }

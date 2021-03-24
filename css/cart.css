@@ -1,3 +1,23 @@
+.cart-empty{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin-bottom: 30px;
+}
+
+.cart-empty h2{
+  color: #FAD24A;
+  font-family: poppins;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+ }
+
+ .cart-empty p{
+   margin-left: 12px;
+ }
+
 
 .flex-div{
   display: flex;

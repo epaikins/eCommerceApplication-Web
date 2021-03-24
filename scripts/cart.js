@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
+    if(localStorage.length > 0){
     var item = localStorage.getItem(0);
-
+    
     // Parse JSON string to object
     var realItem = JSON.parse(item);
 
@@ -10,6 +11,18 @@ $(document).ready(function () {
     var itemSize = realItem.size;
     var itemPrice = realItem.price;
     var itemQuantity = realItem.quantity;
+
+    getItems();
+
+    updateSumItems();
+
+    }
+    else{
+        document.getElementById("cart-empty-id").style.display = "flex";
+        document.getElementById("basket-product").style.display = "none";
+        
+    }
+
 
 
 
@@ -39,8 +52,10 @@ $(document).ready(function () {
             });
             $('.summary-promo').addClass('hide');
             document.getElementById("shop-cart").innerText = 0;
+            document.getElementById("itemInBag").innerText = 0;
     
             localStorage.removeItem("0");
+            localStorage.removeItem("total");
         }
 
 
@@ -128,16 +143,17 @@ $(document).ready(function () {
 
 
     $('.remove button').click(function () {
+        document.getElementById("basket-product").style.display = "none";
+        document.getElementById("cart-empty-id").style.display = "flex";
         removeItem(this);
-        console.log(localStorage);
     });
 
-    getItems();
 
-    updateSumItems();
 
     $(".checkout-cta").on("click", ()=>{
+        if(recalculateCart(true)>0){
         localStorage.setItem('total', recalculateCart(true))
+    }
     });
 
     /* Set values + misc */
