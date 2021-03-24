@@ -29,73 +29,85 @@
                 <span id="shop-cart"></span>
             </a>
         </label>
-        <label class="logo">BendDown</label>
+        <label class="logo"><a href="index.html">BendDown</a></label>
         <ul class="nav-list">
-            <li class="nav-list-item"><a class="active" href="#">Home</a></li>
+            <li class="nav-list-item"><a class="active" href="index.html">Home</a></li>
             <li class="nav-list-item"><a href="#">About</a></li>
             <li class="nav-list-item"><a href="#">Services</a></li>
             <li class="nav-list-item"><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <header>
-		<!-- <div id="cd-cart-trigger"><a class="cd-img-replace" href="#0">Cart</a></div> -->
-	</header>
-
 	<div id="cd-shadow-layer"></div>
 
+    <!-- Sliding Cart -->
 	<div id="cd-cart">
 		<h2>Cart</h2>
 		<ul class="cd-cart-items">
 			<li>
-				<span class="cd-qty"></span>x <span class="item-name"></span>
+				<span class="cd-qty"></span> <span class="item-name"></span>
 				<div class="cd-price"></div>
-				<a href="#0" class="cd-item-remove cd-img-replace">Remove</a>
+				<a href="#0" class="cd-item-remove cd-img-replace"><img src="assets/trash-bin.svg" alt=""></a>
 			</li>
-		</ul> <!-- cd-cart-items -->
+		</ul> 
 
 		<div class="cd-cart-total">
 			<p>Total <span class="slide-total"></span></p>
-		</div> <!-- cd-cart-total -->
+		</div> 
 
 		<a href="checkout.html" class="checkout-btn">Checkout</a>
 		
 		<p class="cd-go-to-cart"><a href="cart.html">Go to cart page</a></p>
-	</div> <!-- cd-cart -->
+	</div>
 
+    <div class="flex-div">
+        <div class="grid-main">
+            <div class="grid-sub grid-main-items">
+                <!-- Contains three images -->
 
-    <div class="grid-main">
-        <div class="grid-sub grid-main-items">
-            <!-- Contains three images -->
-            <div class="grid-sub-items sub" id="product-three-images">
-                <img class="sub-images" src="assets/Abroline11.jpg" alt="">
-                <img class="sub-images" src="assets/Abroline11.jpg" alt="">
-                <img class="sub-images" src="assets/Abroline11.jpg" alt="">
+                <div class="flex-div">
+                    <div class="grid-sub-items sub" id="product-three-images">
+                        <img class="sub-images" src="assets/dress2.png" alt="">
+                        <img class="sub-images" src="assets/dress3.png" alt="">
+                        <img class="sub-images" src="assets/dress4.png" alt="">
+                    </div>
+                </div>
+                <div class="flex-div">
+                    <div class="grid-sub-items main" id="product-main-image">
+                        <img class="main-images" src="assets/dress1.png" alt="">
+                    </div>
+                </div>
             </div>
-            <div class="grid-sub-items main" id="product-main-image">
-                <img class="main-images" src="assets/Abroline10.jpg" alt="">
+
+            
+            <div class="grid-main-items" id="product-info">
+                <!-- Contains information about the product-->
+                <div class="flex-div">
+                    <div>
+                        <div class="review">
+                            <p id="stars">★★★★☆ </p><span>(300)</span>
+                        </div>
+                        <h2 class="item-name">Badgley Mischka </h2>
+                        <h3>
+                            <span class="item-colour">Navy Constellation Gown</span>
+                            <p id="size">Size:</p>
+                            <span class="item-size">18</span>
+                        </h3>
+                        <h3 class="price"> 48.99 </h3>
+                        <hr>
+
+                        <div class="counter">
+                            <span class="down">-</span>
+                            <input id="item-count" type="text" class="quantity-field" value="1" max="10">
+                            <span class="up">+</span>
+                        </div>
+
+                        <input id="cd-cart-trigger" class="add-btn" type="submit" value="ADD TO BAG">
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="grid-main-items" id="product-info">
-            <!-- Contains information about the product-->
-            <h2 class="item-name">Boys' Stillwater Sherpa 1/4-Zip </h2>
-            <h3>
-                <span class="item-colour">Navy</span>, Size 
-                <span class="item-size">18</span>
-            </h3>
-            <h3 class="price"> 48.99 </h3>
-
-            <div class="counter">
-                <span class="down">-</span>
-                <input id="item-count" type="text" class="quantity-field" value="1">
-                <span class="up">+</span>
-            </div>
-
-            <input id="cd-cart-trigger" class="add-btn" type="submit" value="ADD TO BAG">
-
-        </div>
-
+    </div>
 
         <script src="scripts/slideCart.js"></script>
 </body>

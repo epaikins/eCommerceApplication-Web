@@ -9,10 +9,13 @@
     font-family: montserrat;
   }
   nav{
-    background: #0082e6;
+    background: white;
     height: 80px;
     width: 100%;
     z-index: 100%;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    margin-bottom: 40px;
+    
   }
 
   img.hamburger-menu{
@@ -21,12 +24,17 @@
       margin-top: 25px;
   }
 
-  label.logo{
-    color: white;
+  label.logo a{
+    color: rgb(95, 95, 95);
     font-size: 35px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
+  }
+
+  label.logo a:hover{
+    cursor: pointer;
+    color: #FAD24A;
   }
 
   nav .nav-list{
@@ -39,26 +47,28 @@
     margin: 0 5px;
   }
   nav .nav-list .nav-list-item a{
-    color: white;
+    color: grey;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
   }
-  a.active,a:hover{
-    background: #1b9bff;
+
+  .nav-list-item a:hover{
+    background-color: #FAD24A;
     transition: .5s;
   }
+
   .shopbtn{
     font-size: 30px;
-    color: white;
+    color: rgb(95, 95, 95);
     float: right;
     line-height: 80px;
     margin-right: 40px;
     cursor: pointer;
   }
   .shopbtn a{
-      color: whitesmoke;
+      color: rgb(95, 95, 95);
   }
   .shopbtn a:hover{
       background: none;
@@ -72,6 +82,17 @@
     cursor: pointer;
     display: none;
   }
+  #shop-cart{
+    position: relative;
+    font-size: 15px;
+    right: 10px;
+    background-color: whitesmoke;
+    border: 1px solid #FAD24A;
+    border-radius: 50%;
+    padding: 5px;
+  }
+
+
   #check{
     display: none;
   }
@@ -108,13 +129,18 @@
     nav .nav-list .nav-list-item a{
       font-size: 20px;
     }
-    a:hover,a.active{
+    .nav-list-item a:hover{
       background: none;
-      color: #0082e6;
+      color: #FAD24A;
     }
     #check:checked ~ .nav-list{
       left: 0;
       z-index: 999;
+    }
+
+    label.logo a{
+      font-size: 30px;
+      padding-left: 0px;
     }
   }
   section{

@@ -1,3 +1,11 @@
+
+.flex-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rem;
+}
+
 .bold {
     font-weight: bold;
   }
@@ -66,7 +74,6 @@
     display: none;
   }
   
-  .basket,
   
   aside {
     padding: 0 1rem;
@@ -75,10 +82,13 @@
   
   .basket {
     width: 70%;
+    box-shadow: 2px 2px 20px 0.1px rgba(0, 0, 0, 0.2);
+    padding: 10px 30px;
   }
   
   .basket-module {
     color: #111;
+    margin-bottom: 30px;
   }
   
   .basket-module label {
@@ -87,17 +97,22 @@
   }
   
   .promo-code-field {
-    border: 1px solid #ccc;
+    border: 1px solid #FAD24A;
     padding: 0.5rem;
     text-transform: uppercase;
     transition: all 0.2s linear;
     width: 20%;
+    height: 37px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   }
   
   .promo-code-field:hover,
   .promo-code-field:focus {
-    border: 1px solid #999;
+    border: 1px solid #FAD24A;
+  }
+
+  .basket-module label{
+    color: grey;
   }
   
   .promo-code-cta {
@@ -105,6 +120,13 @@
     font-size: 0.625rem;
     margin-left: 0.625rem;
     padding: 0.6875rem 1.25rem 0.625rem;
+    font-size: 15px;
+    background-color: #FAD24A; 
+  }
+
+  .promo-code-cta:hover{
+    cursor: pointer;
+
   }
   
   .basket-labels {
@@ -202,9 +224,9 @@
     background-color: whitesmoke;
     border: 1px solid #aaa;
     border-radius: 4px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 2px;
-    width: 4rem;
+    width: 3.5rem;
   }
   
   aside {
@@ -215,13 +237,10 @@
   
   .summary {
     background-color: #eee;
-    border: 1px solid #aaa;
     padding: 1rem;
     position: fixed;
     width: 250px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-shadow: 2px 2px 20px 0.1px rgba(0, 0, 0, 0.2);
   }
   
   .summary-total-items {
@@ -252,9 +271,6 @@
   }
   
   .summary-promo {
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
     transition: all .3s ease;
   }
   
@@ -296,6 +312,11 @@
     text-transform: uppercase;
     padding: 0.625rem 0;
     width: 100%;
+    background-color: #FAD24A;
+  }
+
+  .checkout-cta:hover{
+    cursor: pointer;
   }
   
   .summary-delivery-selection {

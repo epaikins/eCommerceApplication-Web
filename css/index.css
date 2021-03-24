@@ -1,21 +1,31 @@
+.flex-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+}
+
 .grid-main{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:3fr 1fr;
     gap: 1rem;
+    
 }
 
 .grid-sub{
     display: grid;
     grid-template-columns: 1fr 8fr;
     gap: 1rem;
+    width: 60rem;
 }
 
 .grid-sub-items{
-    border: 1px solid teal;
+    /* border: 1px solid teal; */
 }
 
 .grid-main-items{
-    border: 1px solid tomato;
+    padding-left: 10px;
+    box-shadow: 2px 2px 20px 0.1px rgba(0, 0, 0, 0.2);
 }
 
 img{
@@ -25,7 +35,8 @@ img{
 
 .sub-images:hover{
     cursor: pointer;
-    border: 2px solid tomato;
+    border: 1px solid #FAD24A; 
+    /* border: 2px solid tomato; */
 }
 
 .sub{
@@ -38,24 +49,139 @@ img{
     height: 700px;
 }
 
+/* Product Info Starts */
+
+.review{
+    margin-top: 20px;
+}
+
+#stars{
+    color: #FAD24A;
+    display: inline;
+}
+
+.item-name{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    
+}
+
+.item-colour{
+    font-weight:lighter;
+}
+
+.price::before{
+content: "GHC";
+}
+
+.price{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: lighter;
+    font-family: serif;
+    color: grey;
+}
+
+.item-size{
+    font-size: 25px;
+    color: #FAD24A;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #FAD24A;
+    border-radius: 50%;
+}
+
+.item-size:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #FAD24A;
+}
+
+.item-size:focus{
+    color: white;
+    background-color: #FAD24A;
+}
+
+#size{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: grey;
+}
+
+hr{
+    width: 250px;
+}
+/* Product Info Ends */
+
 
 /* Counter Starts */
 
-input{
-    width: 20px;
+.down, .up{
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    color: #FAD24A;
+    border: 1px solid #FAD24A;
+    background-color: white;
+    border-radius: 50%;
+
 }
 
-.down:hover{
+.down:hover, .up:hover{
     cursor: pointer;
+    color: white;
+    background-color: #FAD24A;
+
 }
 
-.up:hover{
-    cursor: pointer;
+.quantity-field{
+    margin-top: 20px;    
+    margin-bottom: 20px; 
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #FAD24A;
+    color: #FAD24A;
+}
+
+.quantity-field:focus{
+    outline: none;
+    border: 1px solid #FAD24A;
 }
 
 /* Counter Ends */
 
 /* Add button Starts */
 .add-btn{
- width: 100px;
+ width: 250px;
+ height: 50px;
+ color: white;
+ background-color: #FAD24A;
+ border: 1px solid #FAD24A;
+ font-size: 20px;
 }
+
+.add-btn:hover{
+    cursor: pointer;
+}
+
+.add-btn:focus{
+    outline: none;
+}
+
+/* Add button Ends */
+
+
+
+@media screen and (max-width: 640px) {
+    .grid-main{
+        grid-template-columns:1fr;
+    }
+    
+    .grid-sub{
+        grid-template-rows: 1fr;
+    }
+
+  }
