@@ -83,6 +83,7 @@ $(document).ready(function () {
                 $('.final-value').fadeIn(fadeTime);
             });
         }
+        return total;
     }
 
         /* Update quantity */
@@ -134,6 +135,10 @@ $(document).ready(function () {
     getItems();
 
     updateSumItems();
+
+    $(".checkout-cta").on("click", ()=>{
+        localStorage.setItem('total', recalculateCart(true))
+    });
 
     /* Set values + misc */
     var promoCode;

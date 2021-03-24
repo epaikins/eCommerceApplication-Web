@@ -80,3 +80,36 @@ function move_navigation( $navigation, $MQ) {
 		$navigation.insertAfter('header');
 	}
 }
+
+// $(".cd-item-remove").on("click",()=>{
+// 	removeItem(this);
+// })
+
+/* Remove item from cart */
+function removeItem(removeButton) {
+	/* Remove row from DOM and recalc cart total */
+	var productRow = $(removeButton).parent().parent();
+	productRow.slideUp(fadeTime, function () {
+		productRow.remove();
+		updateSumItems();
+	});
+
+	localStorage.removeItem("0");
+}
+
+function updateSumItems() {
+	var sumItems = 0;
+
+	$('.quantity input').each(function () {
+		sumItems += parseInt($(this).val());
+	});
+	$('.total-items').text(sumItems);
+	var itemObject = {
+		name: itemName,
+		colour: itemColour,
+		size: itemSize,
+		price: itemPrice,
+		quantity: sumItems
+	}
+	localStorage.setItem(0, JSON.stringify(itemObject));
+}

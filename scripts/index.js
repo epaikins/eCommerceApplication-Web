@@ -90,4 +90,30 @@ $(document).ready(function () {
         }
     }
 
+    $("#sub-image-1").on("click", ()=>{
+        imagefun("sub-image-1");
+    })
+
+    $("#sub-image-2").on("click", ()=>{
+        imagefun("sub-image-2");
+    })
+
+    $("#sub-image-3").on("click", ()=>{
+       imagefun("sub-image-3");
+    })
+
+    function imagefun(imageID) {
+        var sub_Id = document.getElementById(imageID);
+        var main_Id = document.getElementById("main-image")
+        if(sub_Id.src.match(main_Id.src)){
+            sub_Id.src = main_Id.src;
+            console.log('printed here')
+        }
+        else{
+            var a = main_Id.src ;
+            main_Id.src = sub_Id.src;
+            sub_Id.src = a;
+        }
+    } 
+
 })

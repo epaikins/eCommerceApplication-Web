@@ -30,12 +30,13 @@
   
   
   #cd-cart {
-    left: -100%;
+    right: 100%;
     background: #FFF;
     transition: left 0.3s;
   }
+
   #cd-cart.speed-in {
-    left: 0;
+    right: 0;
   }
   #cd-cart > * {
     padding: 0 1em;
@@ -90,6 +91,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    display: none;
   }
   .no-touch #cd-cart .cd-item-remove:hover {
     color: tomato;

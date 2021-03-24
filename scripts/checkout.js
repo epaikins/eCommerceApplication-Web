@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var item = localStorage.getItem(0);
-
+    var total = localStorage.getItem('total');
     // Parse JSON string to object
     var realItem = JSON.parse(item);
     var itemName = realItem.name;
@@ -9,6 +9,7 @@ $(document).ready(function () {
     var itemSize = realItem.size;
     var itemPrice = realItem.price;
     var itemQuantity = realItem.quantity;
+     
 
     getItems();
     var fadeTime = 300;
@@ -23,8 +24,7 @@ $(document).ready(function () {
             $(".item-name").text(itemName);
             $("#product-subtotal").text((itemPrice * itemQuantity).toFixed(2));
             $("#basket-subtotal").text((itemPrice * itemQuantity).toFixed(2));
-
-            recalculateCart(true);
+            $("#basket-total").text((Number(total)).toFixed(2));
         }
     }
 
@@ -72,12 +72,21 @@ $(document).ready(function () {
 
     // Shipping Details
 
-    var personDetails = $(".small-text").parent().parent();
-    console
-    // var itemName = productRow.children('.item-name').text();
+    
     // var itemColour = productRow.children().children('.item-colour').text();
     // var itemSize = productRow.children().children('.item-size').text();
     // var itemPrice = parseFloat(productRow.children('.price').text());
 
+    $("#payment-cta").on('click', ()=>{
+        var personDetails = $(".small-text").parent().parent();
+        var itemName = personDetails.children("#firstName").text();
+        console.log(itemName);
+        console.log(personDetails)
+    })
 
+    function addPersonDetails(){
+        var personDetails = $(".small-text").parent().parent();
+        var itemName = personDetails.children('#firstName').text();
+        console.log(itemName)
+    };
 })
