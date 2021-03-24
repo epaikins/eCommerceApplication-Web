@@ -117,8 +117,8 @@
     text-align: center;
     font-size: 20px;
   }
-  .no-touch #cd-cart .checkout-btn:hover {
-    opacity: 0.5;
+  #cd-cart .checkout-btn:hover {
+    background:linear-gradient(to right, #f8d358, #fce28e);
   }
   #cd-cart .cd-go-to-cart {
     text-align: center;

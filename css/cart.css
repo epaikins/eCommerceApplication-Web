@@ -58,16 +58,17 @@
   .product-details {
     float: left;
   }
+
   
   .price:before,
   .subtotal:before,
   .subtotal-value:before,
   .total-value:before{
-    content: 'GH₵';
+    content: 'GH₵ ';
   }
 
   .promo-value:after {
-    content: '%';
+    content: ' %';
   }
   
   .hide {
@@ -126,6 +127,7 @@
 
   .promo-code-cta:hover{
     cursor: pointer;
+    background:linear-gradient(to right, #f8d358, #fce28e);
 
   }
   
@@ -142,7 +144,7 @@
   }
   
   .basket-labels li {
-    color: #111;
+    color: grey;
     display: inline-block;
     padding: 0.625rem 0;
   }
@@ -170,17 +172,23 @@
     bottom: 1.125rem;
     float: right;
     position: absolute;
-    right: 0;
+    right: 0px;
     text-align: right;
-    width: 45%;
+  }
+
+  .remove button{
+    background-color: white;
+  }
+
+  .remove button:hover{
+    fill: rgb(248, 177, 165);
   }
   
-  .remove button {
-    background-color: transparent;
-    color: #777;
+  .remove button img{
+    width: 30px;
+    height: 30px;
+    background-color: none;
     float: none;
-    text-decoration: underline;
-    text-transform: uppercase;
   }
 
   .remove button:hover{
@@ -210,19 +218,18 @@
   }
   
   .product-frame {
-    border: 1px solid #aaa;
+    border: 1px solid #FAD24A;
   }
   
   .product-details {
     padding: 0 1.5rem;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   
   .quantity-field {
-    background-color: whitesmoke;
-    border: 1px solid #aaa;
+    background-color: white;
+    border: 1px solid #FAD24A;
+    text-align: center;
     border-radius: 4px;
     font-size: 1rem;
     padding: 2px;
@@ -312,11 +319,13 @@
     text-transform: uppercase;
     padding: 0.625rem 0;
     width: 100%;
+    color: white;
     background-color: #FAD24A;
   }
 
   .checkout-cta:hover{
     cursor: pointer;
+    background:linear-gradient(to right, #f8d358, #fce28e);
   }
   
   .summary-delivery-selection {
@@ -328,6 +337,26 @@
     height: 34px;
     width: 100%;
   }
+
+  .item-size{
+    font-size: 20px;
+    color: #FAD24A;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid #FAD24A;
+    border-radius: 50%;
+}
+
+.item-size:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #FAD24A;
+}
+
+.item-size:focus{
+    color: white;
+    background-color: #FAD24A;
+}
   
   @media screen and (max-width: 640px) {
     aside,

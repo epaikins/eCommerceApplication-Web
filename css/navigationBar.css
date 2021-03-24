@@ -7,6 +7,7 @@
   }
   body{
     font-family: montserrat;
+    width: 100%;
   }
   nav{
     background: white;
@@ -82,6 +83,11 @@
     cursor: pointer;
     display: none;
   }
+
+  .checkout-btn:hover{
+    background:linear-gradient(to right, #f8d358, #fce28e);
+  }
+
   #shop-cart{
     position: relative;
     font-size: 15px;
