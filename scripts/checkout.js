@@ -56,14 +56,38 @@ $(document).ready(function () {
         var itemPhone = $("#phone").val();
         var itemEmail = $("#email").val();
 
+        if(localStorage.length > 0 ){
         if (itemfName.length > 0 && itemlName.length > 0 && itemEmail.length > 0 && itemEmail.length > 0) {
             // console.log(itemfName,itemlName,itemEmail, itemGPS);
             alert("Thank you for your purchase, we will send a link to the payment portal via the email provided.")
             document.getElementById("summaryProduct").style.display = "none";
             document.getElementById("cart-empty-id").style.display = "flex";
-            $(':input').val('');
+            document.getElementById("cart-empty-id").style.float = "none";
+            $(':input[type="text"]').val('');
+            localStorage.removeItem("0");
+            localStorage.removeItem("total");
         } else {
             alert("Please these fields are required:\n\nFirst name, Last name, Email and GPS");
         }
+    }else{
+        alert("Your shopping cart is empty.")
+    }
     })
+
+            /* Remove item from cart */
+            function removeItem() {
+                /* Remove row from DOM and recalc cart total */
+                // var productRow = $(removeButton).parent().parent();
+                // productRow.slideUp(fadeTime, function () {
+                //     productRow.remove();
+                //     recalculateCart();
+                //     updateSumItems();
+                // });
+                // $('.summary-promo').addClass('hide');
+                // document.getElementById("shop-cart").innerText = 0;
+                document.getElementById("itemInBag").innerText = 0;
+        
+                localStorage.removeItem("0");
+                localStorage.removeItem("total");
+            }
 })

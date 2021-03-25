@@ -105,3 +105,19 @@ input[type="radio"].with-gap:checked +span:after
 
 
 /* Shipping Options Ends */
+
+/* Payment Button */
+input[type="submit"]{
+    padding: 20px 40px;
+    background-color: #FAD24A;
+    color: white;
+    font-size: 20px;
+    margin-left: 9rem;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    border-radius: 5px;
+    background:linear-gradient(to right, #f8d358, #fce28e);
+}
