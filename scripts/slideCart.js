@@ -7,13 +7,6 @@ jQuery(document).ready(function($){
 		$lateral_cart = $('#cd-cart'),
 		$shadow_layer = $('#cd-shadow-layer');
 
-	//open lateral menu on mobile
-	$hamburger_icon.on('click', function(event){
-		event.preventDefault();
-		//close cart panel (if it's open)
-		$lateral_cart.removeClass('speed-in');
-		toggle_panel_visibility($menu_navigation, $shadow_layer, $('body'));
-	});
 
 	//open cart
 	$cart_trigger.on('click', function(event){
@@ -53,7 +46,7 @@ jQuery(document).ready(function($){
 		}
 
 	});
-});
+
 
 function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
 	if( $lateral_panel.hasClass('speed-in') ) {
@@ -87,13 +80,6 @@ function move_navigation( $navigation, $MQ) {
 
 /* Remove item from cart */
 function removeItem(removeButton) {
-	/* Remove row from DOM and recalc cart total */
-	var productRow = $(removeButton).parent().parent();
-	productRow.slideUp(fadeTime, function () {
-		productRow.remove();
-		updateSumItems();
-	});
-
 	localStorage.removeItem("0");
 }
 
@@ -113,3 +99,9 @@ function updateSumItems() {
 	}
 	localStorage.setItem(0, JSON.stringify(itemObject));
 }
+
+$(".checkout-btn").click(function(){
+	localStorage.setItem("total",$(".slide-total").text());
+})
+
+});
