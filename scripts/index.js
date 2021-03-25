@@ -65,7 +65,7 @@ $(document).ready(function () {
         $(".item-name").text(itemName);
         $(".cd-price").text(itemPrice);
         $(".slide-total").text((itemQuantity*itemPrice).toFixed(2));
-        console.log((itemQuantity*itemPrice).toFixed(2));
+        document.getElementById("cd-cart-itemsId").style.display = "block";
     };
 
     getQuantity();

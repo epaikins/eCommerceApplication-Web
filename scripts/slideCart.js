@@ -80,7 +80,7 @@ function move_navigation( $navigation, $MQ) {
 
 /* Remove item from cart */
 function removeItem(removeButton) {
-	localStorage.removeItem("0");
+	
 }
 
 function updateSumItems() {
@@ -102,6 +102,13 @@ function updateSumItems() {
 
 $(".checkout-btn").click(function(){
 	localStorage.setItem("total",$(".slide-total").text());
+})
+
+$(".cd-item-remove").click(function(){
+	localStorage.removeItem("0");
+	document.getElementById("cd-cart-itemsId").style.display = "none";
+	$(".slide-total").text((0).toFixed(2));
+	$("#shop-cart").text(0);
 })
 
 });
